@@ -6,17 +6,30 @@ average case : O(log n)
 worst case : O(n)
 """
 
+#-----Recursive-----
+# def binarySearch(lst,item,left,right):
+#     if(right>=left):
+#         mid=(left+right)//2
+#         if lst[mid]==item:
+#             return (mid+1)
+#         elif lst[mid]<item:
+#             return binarySearch(lst,item,mid+1,right)
+#         else:
+#             return binarySearch(lst,item,left,mid-1)
+#     else:
+#         return -1
+    
+#-----Iterative-----
 def binarySearch(lst,item,left,right):
-    if(right>=left):
+    while right>=left:
         mid=(left+right)//2
         if lst[mid]==item:
             return (mid+1)
         elif lst[mid]<item:
-            return binarySearch(lst,item,mid+1,right)
+            left=mid+1
         else:
-            return binarySearch(lst,item,left,mid-1)
-    else:
-        return -1
+            right=mid-1
+    return -1
 
 lst=list(map(int,input().split()))
 item=int(input())
