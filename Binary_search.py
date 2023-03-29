@@ -1,3 +1,11 @@
+"""
+Binary Search
+Time Complexity
+best case : O(1)
+average case : O(log n)
+worst case : O(n)
+"""
+
 def binarySearch(lst,item,left,right):
     if(right>=left):
         mid=(left+right)//2
